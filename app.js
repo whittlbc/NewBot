@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('newTest');
 var routes = require('./routes/index');
-var messages = require('./routes/messages');
-var Socket = require('./socket');
+var Socket = require('./src/socket');
 var app = express();
 
 // view engine setup
@@ -24,7 +23,6 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 // set up routes
 app.use('/', routes);
-app.use('/messages', messages);
 
 // create and start server
 var server = app.listen(app.get('port'), function () {
