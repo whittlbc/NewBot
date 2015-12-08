@@ -36,7 +36,6 @@ assign(Bot.prototype, {
   checkForMatch: function (script, text) {
     script.respond = this.respond;
     var matches = text.match(script.pattern);
-    var matchExists = (matches != null);
     if (matches != null) {
       script.onMatch(matches, text);
       return true;
