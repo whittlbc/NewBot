@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('newTest');
 var routes = require('./routes/index');
-var Socket = require('./src/socket');
+var Bot = require('./src/bot');
 var app = express();
 
 // view engine setup
@@ -29,8 +29,8 @@ var server = app.listen(app.get('port'), function () {
   console.log('Listening on 3000');
 });
 
-var socket = new Socket(server);
-socket.configure();
+var bot = new Bot(server);
+bot.configure();
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

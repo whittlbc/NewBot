@@ -13,7 +13,8 @@
     "request": "*",
     "lodash": "^3.7.0",
     "inherits": "~2.0.1",
-    "socket.io": "1.3.7"
+    "socket.io": "1.3.7",
+    "app-root-path": "*"
   },
   "engines": {
     "node": "0.10.32",
