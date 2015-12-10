@@ -5,7 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var debug = require('debug')('newTest');
-var routes = require('./routes/index');
+var index = require('./routes/index');
+var code = require('./routes/code');
+var token = require('./routes/token');
+
 var Bot = require('./src/bot');
 var app = express();
 
@@ -22,7 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'client')));
 
 // set up routes
-app.use('/', routes);
+app.use('/', index);
+app.use('/code', code);
+app.use('/token', token);
 
 // create and start server
 var server = app.listen(app.get('port'), function () {
@@ -61,6 +66,5 @@ app.use(function (err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;

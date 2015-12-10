@@ -15,7 +15,8 @@
     "inherits": "~2.0.1",
     "socket.io": "1.3.7",
     "app-root-path": "*",
-    "node-localstorage": "*"
+    "node-localstorage": "*",
+    "js-yaml": "*"
   },
   "engines": {
     "node": "0.10.32",

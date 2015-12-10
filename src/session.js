@@ -17,5 +17,5 @@ assign(Session.prototype, {
 
 });
 
-module.exports = Session;
+module.exports = new Session();
 

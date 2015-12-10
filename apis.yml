@@ -1,0 +1,23 @@
+
+Uber:
+  client_id           : 'kewlUN8SYmV1PTZ1MRf8uYbLNnu9ZnYX'
+  client_secret       : 'qgR_VIKOR3RuPtHcyxyuHxAH-9Q-VNrjzmMPZ9jC'
+
+  AUTH:
+
+    CODE:
+      url                 : 'https://login.uber.com/oauth/v2/authorize'
+
+      PARAMS:
+        client_id           : 'kewlUN8SYmV1PTZ1MRf8uYbLNnu9ZnYX'
+        scope               : 'profile history'
+        response_type       : 'code'
+
+    TOKEN:
+      url                 : 'https://login.uber.com/oauth/v2/token'
+
+      PARAMS:
+        client_id           : 'kewlUN8SYmV1PTZ1MRf8uYbLNnu9ZnYX'
+        client_secret       : 'qgR_VIKOR3RuPtHcyxyuHxAH-9Q-VNrjzmMPZ9jC'
+        grant_type          : 'kewlUN8SYmV1PTZ1MRf8uYbLNnu9ZnYX'
+

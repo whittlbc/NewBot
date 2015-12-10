@@ -15,20 +15,21 @@ assign(Uber.prototype, {
 
   getAccessToken: function (cb) {
     // User doesn't have a session for this service yet, so prompt login
-    if (!this.sessionData) {
-      OAuth.loginForService('Uber');
-      return;
-    }
-    // if access token is expired, refresh it and update session data with the new token
-    if (this.accessTokenExpired(this.sessionData.accessToken)) {
-      this.refreshAccessToken(function (newToken) {
-        this.sessionData.accessToken = newToken;
-        Session.saveServiceData('Uber', this.sessionData);
-        cb(newToken);
+    //if (!this.sessionData) {
+      OAuth.loginForService('Uber', function (url) {
+        cb(url)
       });
-    } else {
-      cb(this.sessionData.accessToken);
-    }
+    //}
+    // if access token is expired, refresh it and update session data with the new token
+    //if (this.accessTokenExpired(this.sessionData.accessToken)) {
+    //  this.refreshAccessToken(function (newToken) {
+    //    this.sessionData.accessToken = newToken;
+    //    Session.saveServiceData('Uber', this.sessionData);
+    //    cb(newToken);
+    //  });
+    //} else {
+    //  cb(this.sessionData.accessToken);
+    //}
   },
 
   accessTokenExpired: function () {
@@ -41,9 +42,9 @@ assign(Uber.prototype, {
 
   },
 
-  getHistory: function () {
-    this.getAccessToken(function (accessToken) {
-      // yay
+  getHistory: function (cb) {
+    this.getAccessToken(function (url) {
+      cb(url);
     });
   }
 
